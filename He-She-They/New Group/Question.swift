@@ -8,4 +8,16 @@
 
 import Foundation
 
-
+class Question{
+    let blankSentence: String
+    let answerSentence: String
+    let answerCorrect: String
+    let imageName: String
+    
+    init (blank: String, answer: String, word: String, image: String){
+        blankSentence = blank
+        answerSentence =  answer
+        answerCorrect = word
+        imageName = image
+    }
+}
