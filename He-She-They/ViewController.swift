@@ -13,10 +13,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var pronounSeg: UISegmentedControl!
     @IBOutlet weak var sentenceLbl: UILabel!
     
+    let allLetters = ["A","B","C","D","E","F","G","H","I"]
+    var letters = [String]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        askQuestion()
+        letters = allLetters
+       
     }
     
     func askQuestion() {
@@ -38,6 +42,12 @@ class ViewController: UIViewController {
         default:
             sentenceLbl.text = "Nothing"
         }
+    }
+    @IBAction func nextBtn(_ sender: Any) {
+        var lastLetterIndex = letters.count - 1
+        var randomIndexNum = Int.random(in: 0...lastLetterIndex)
+        sentenceLbl.text = letters[randomIndexNum]
+        letters.remove(at: randomIndexNum)
     }
     
 }
