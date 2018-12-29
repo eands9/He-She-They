@@ -16,6 +16,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        askQuestion()
+    }
+    
+    func askQuestion() {
+        let questions = QuestionList()
+        let questionIndex = 0
+        sentenceLbl.text = questions.list[questionIndex].blankSentence
     }
 
     @IBAction func pronounSegBtn(_ sender: Any) {
