@@ -38,7 +38,7 @@
                                     <segment title="They"/>
                                 </segments>
                                 <connections>
-                                    <action selector="pronounSegBtn:" destination="BYZ-38-t0r" eventType="valueChanged" id="upG-lO-5E2"/>
+                                    <action selector="pronounSegBtn:" destination="BYZ-38-t0r" eventType="valueChanged" id="y3N-Tf-utE"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
@@ -46,8 +46,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="pronounSeg" destination="ukc-Iz-XXA" id="D8y-OQ-DG2"/>
-                        <outlet property="sentenceLbl" destination="edI-IM-Lzg" id="Eld-BD-BYS"/>
+                        <outlet property="pronounSeg" destination="ukc-Iz-XXA" id="wL7-eb-6X5"/>
+                        <outlet property="sentenceLbl" destination="edI-IM-Lzg" id="Qj5-Re-gYB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

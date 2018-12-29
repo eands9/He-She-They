@@ -9,12 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
+    @IBOutlet weak var pronounSeg: UISegmentedControl!
+    @IBOutlet weak var sentenceLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-
+    @IBAction func pronounSegBtn(_ sender: Any) {
+        let pronounIndex = pronounSeg.selectedSegmentIndex
+        
+        switch pronounIndex {
+        case 0:
+            sentenceLbl.text = "He"
+        case 1:
+            sentenceLbl.text = "She"
+        case 2:
+            sentenceLbl.text = "They"
+        default:
+            sentenceLbl.text = "Nothing"
+        }
+    }
+    
 }
 

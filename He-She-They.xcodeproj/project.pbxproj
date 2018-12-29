@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D0F303121D6F2DA00F588F0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F303021D6F2DA00F588F0 /* Question.swift */; };
 		4D304B6121D5BCC300758E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D304B6021D5BCC300758E10 /* AppDelegate.swift */; };
 		4D304B6321D5BCC300758E10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D304B6221D5BCC300758E10 /* ViewController.swift */; };
 		4D304B6621D5BCC300758E10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D304B6421D5BCC300758E10 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D0F303021D6F2DA00F588F0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		4D304B5D21D5BCC300758E10 /* He-She-They.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "He-She-They.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D304B6021D5BCC300758E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D304B6221D5BCC300758E10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D0F303221D6F2F000F588F0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D0F303021D6F2DA00F588F0 /* Question.swift */,
+			);
+			name = Model;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		4D304B5421D5BCC300758E10 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +71,7 @@
 				4D304B6721D5BCC400758E10 /* Assets.xcassets */,
 				4D304B6921D5BCC400758E10 /* LaunchScreen.storyboard */,
 				4D304B6C21D5BCC400758E10 /* Info.plist */,
+				4D0F303221D6F2F000F588F0 /* Model */,
 			);
 			path = "He-She-They";
 			sourceTree = "<group>";
@@ -135,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D0F303121D6F2DA00F588F0 /* Question.swift in Sources */,
 				4D304B6321D5BCC300758E10 /* ViewController.swift in Sources */,
 				4D304B6121D5BCC300758E10 /* AppDelegate.swift in Sources */,
 			);
