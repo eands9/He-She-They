@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4D0F303121D6F2DA00F588F0 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F303021D6F2DA00F588F0 /* Question.swift */; };
+		4D0F303621D6FCEB00F588F0 /* QuestionList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0F303521D6FCEB00F588F0 /* QuestionList.swift */; };
 		4D304B6121D5BCC300758E10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D304B6021D5BCC300758E10 /* AppDelegate.swift */; };
 		4D304B6321D5BCC300758E10 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D304B6221D5BCC300758E10 /* ViewController.swift */; };
 		4D304B6621D5BCC300758E10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D304B6421D5BCC300758E10 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		4D0F303021D6F2DA00F588F0 /* Question.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		4D0F303521D6FCEB00F588F0 /* QuestionList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionList.swift; sourceTree = "<group>"; };
 		4D304B5D21D5BCC300758E10 /* He-She-They.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "He-She-They.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D304B6021D5BCC300758E10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D304B6221D5BCC300758E10 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXGroup;
 			children = (
 				4D0F303021D6F2DA00F588F0 /* Question.swift */,
+				4D0F303521D6FCEB00F588F0 /* QuestionList.swift */,
 			);
 			name = Model;
 			path = "New Group";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D0F303121D6F2DA00F588F0 /* Question.swift in Sources */,
+				4D0F303621D6FCEB00F588F0 /* QuestionList.swift in Sources */,
 				4D304B6321D5BCC300758E10 /* ViewController.swift in Sources */,
 				4D304B6121D5BCC300758E10 /* AppDelegate.swift in Sources */,
 			);
