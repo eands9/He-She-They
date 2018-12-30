@@ -8,25 +8,27 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
   
     @IBOutlet weak var pronounSeg: UISegmentedControl!
     @IBOutlet weak var sentenceLbl: UILabel!
     
-    let allLetters = ["A","B","C","D","E","F","G","H","I"]
-    var letters = [String]()
+    var questions = QuestionList()
+    var lastQIndex = 0
+    var questionIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        letters = allLetters
-       
+        askQuestion()
+     
     }
     
     func askQuestion() {
-        let questions = QuestionList()
-        let questionIndex = 0
+        lastQIndex = questions.list.count - 1
+        questionIndex = Int.random(in: 0...lastQIndex)
         sentenceLbl.text = questions.list[questionIndex].blankSentence
+        questions.list.remove(at: questionIndex)
     }
 
     @IBAction func pronounSegBtn(_ sender: Any) {
@@ -44,10 +46,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction func nextBtn(_ sender: Any) {
-        var lastLetterIndex = letters.count - 1
-        var randomIndexNum = Int.random(in: 0...lastLetterIndex)
-        sentenceLbl.text = letters[randomIndexNum]
-        letters.remove(at: randomIndexNum)
+        askQuestion()
     }
     
 }
