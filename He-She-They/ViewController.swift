@@ -24,6 +24,12 @@ class ViewController: UIViewController {
      
     }
     
+    func startOver(){
+        questions = QuestionList()
+        askQuestion()
+        
+    }
+    
     func askQuestion() {
         lastQIndex = questions.list.count - 1
         questionIndex = Int.random(in: 0...lastQIndex)
@@ -41,13 +47,25 @@ class ViewController: UIViewController {
             sentenceLbl.text = "She"
         case 2:
             sentenceLbl.text = "They"
-        default:
+        case 3:
+            if lastQIndex == 0{
+                let alert = UIAlertController(title: "Mission Complete!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
+                let restartAction = UIAlertAction(title: "Restart All Questions", style: .default) { (handler) in
+                    self.startOver()
+                    
+                }
+                alert.addAction(restartAction)
+                present(alert, animated: true, completion: nil)
+                
+            }
+            else{
+                askQuestion()
+            }
+            default:
             sentenceLbl.text = "Nothing"
+            }
         }
+
     }
-    @IBAction func nextBtn(_ sender: Any) {
-        askQuestion()
-    }
-    
-}
+
 
