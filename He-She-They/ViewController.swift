@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var questions = QuestionList()
     var lastQIndex = 0
     var questionIndex = 0
-    var answerCorrect = ""
+    var answerCorrectSentence = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         lastQIndex = questions.list.count - 1
         questionIndex = Int.random(in: 0...lastQIndex)
         sentenceLbl.text = questions.list[questionIndex].blankSentence
-        answerCorrect = questions.list[questionIndex].answerSentence
+        answerCorrectSentence = questions.list[questionIndex].answerSentence
         questions.list.remove(at: questionIndex)
         pronounSeg.selectedSegmentIndex = 4
     }
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
         case 2:
             sentenceLbl.text = "They"
         case 3:
-            sentenceLbl.text = answerCorrect
+            sentenceLbl.text = answerCorrectSentence
         case 4:
             if lastQIndex == 0{
                 let alert = UIAlertController(title: "Mission Completed!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
