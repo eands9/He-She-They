@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         questionIndex = Int.random(in: 0...lastQIndex)
         sentenceLbl.text = questions.list[questionIndex].blankSentence
         questions.list.remove(at: questionIndex)
+        pronounSeg.selectedSegmentIndex = 3
     }
 
     @IBAction func pronounSegBtn(_ sender: Any) {
