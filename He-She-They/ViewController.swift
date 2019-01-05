@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var questions = QuestionList()
     var lastQIndex = 0
     var questionIndex = 0
+    var answerCorrect = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +35,9 @@ class ViewController: UIViewController {
         lastQIndex = questions.list.count - 1
         questionIndex = Int.random(in: 0...lastQIndex)
         sentenceLbl.text = questions.list[questionIndex].blankSentence
+        answerCorrect = questions.list[questionIndex].answerSentence
         questions.list.remove(at: questionIndex)
-        pronounSeg.selectedSegmentIndex = 3
+        pronounSeg.selectedSegmentIndex = 4
     }
 
     @IBAction func pronounSegBtn(_ sender: Any) {
@@ -49,8 +51,10 @@ class ViewController: UIViewController {
         case 2:
             sentenceLbl.text = "They"
         case 3:
+            sentenceLbl.text = answerCorrect
+        case 4:
             if lastQIndex == 0{
-                let alert = UIAlertController(title: "Mission Complete!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Mission Completed!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
                 let restartAction = UIAlertAction(title: "Restart All Questions", style: .default) { (handler) in
                     self.startOver()
                     
