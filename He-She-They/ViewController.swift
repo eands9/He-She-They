@@ -13,7 +13,8 @@ class ViewController: UIViewController {
   
     @IBOutlet weak var pronounSeg: UISegmentedControl!
     @IBOutlet weak var sentenceLbl: UILabel!
-    
+    @IBOutlet weak var progressLbl: UILabel!
+
     var questions = QuestionList()
     var lastQIndex = 0
     var questionIndex = 0
@@ -21,6 +22,9 @@ class ViewController: UIViewController {
     var pronounCorrect = ""
     var userAnswer = ""
     var randomPick = 0
+    var numberOfAttempts = 0
+    var answerCorrect = 0
+
     let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome","Give me a high five, You are so smart"]
     let retryArray = ["Try again","Oooops","Don't worry nobody's perfect."]
     
@@ -76,14 +80,21 @@ class ViewController: UIViewController {
         if userAnswer == pronounCorrect{
             randomPositiveFeedback()
             sentenceLbl.text = answerCorrectSentence
+            answerCorrect += 1
+            numberOfAttempts += 1
+            progressLbl.text  = "\(answerCorrect) / \(numberOfAttempts)"
+            
         }
         else {
             randomTryAgain()
+            numberOfAttempts += 1
+            progressLbl.text = "\(answerCorrect) / \(numberOfAttempts)"
+            
         }
     }
     func readMe( myText: String) {
         let utterance = AVSpeechUtterance(string: myText )
-        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: "ru-US")
         utterance.rate = 0.5
         
         let synthesizer = AVSpeechSynthesizer()
@@ -97,6 +108,9 @@ class ViewController: UIViewController {
         randomPick = Int(arc4random_uniform(2))
         readMe(myText: retryArray[randomPick])
     }
+
+        
 }
+
 
 
