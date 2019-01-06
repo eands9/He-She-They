@@ -55,6 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imagePic" destination="Fo4-ym-daH" id="CbZ-lf-mRX"/>
                         <outlet property="progressLbl" destination="32b-9O-ubW" id="Azd-H0-FEK"/>
                         <outlet property="pronounSeg" destination="ukc-Iz-XXA" id="wL7-eb-6X5"/>
                         <outlet property="sentenceLbl" destination="edI-IM-Lzg" id="Qj5-Re-gYB"/>

@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var pronounSeg: UISegmentedControl!
     @IBOutlet weak var sentenceLbl: UILabel!
     @IBOutlet weak var progressLbl: UILabel!
-
+    @IBOutlet weak var imagePic: UIImageView!
+    
     var questions = QuestionList()
     var lastQIndex = 0
     var questionIndex = 0
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
     func askQuestion() {
         lastQIndex = questions.list.count - 1
         questionIndex = Int.random(in: 0...lastQIndex)
+        imagePic.image = UIImage(named: questions.list[questionIndex].imageName)
         sentenceLbl.text = questions.list[questionIndex].blankSentence
         answerCorrectSentence = questions.list[questionIndex].answerSentence
         pronounCorrect = questions.list[questionIndex].answerCorrect
