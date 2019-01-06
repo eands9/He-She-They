@@ -20,6 +20,9 @@ class ViewController: UIViewController {
     var answerCorrectSentence = ""
     var pronounCorrect = ""
     var userAnswer = ""
+    var randomPick = 0
+    let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome","Give me a high five, You are so smart"]
+    let retryArray = ["Try again","Oooops","Don't worry nobody's perfect."]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
         case 4:
             if lastQIndex == 0{
                 let alert = UIAlertController(title: "Mission Completed!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
-                let restartAction = UIAlertAction(title: "Restart All Questions", style: .default) { (handler) in
+                let restartAction = UIAlertAction(title: "Start Over", style: .default) { (handler) in
                     self.startOver()
                 }
                 alert.addAction(restartAction)
@@ -71,12 +74,11 @@ class ViewController: UIViewController {
         }
     func checkAnswer() {
         if userAnswer == pronounCorrect{
-            print("You are so smart!")
+            randomPositiveFeedback()
             sentenceLbl.text = answerCorrectSentence
-            
         }
         else {
-            print("Don't worry, nobody's perfect!")
+            randomTryAgain()
         }
     }
     func readMe( myText: String) {
@@ -86,6 +88,14 @@ class ViewController: UIViewController {
         
         let synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
+    }
+    func randomPositiveFeedback(){
+        randomPick = Int(arc4random_uniform(9))
+        readMe(myText: congratulateArray[randomPick])
+    }
+    func randomTryAgain(){
+        randomPick = Int(arc4random_uniform(2))
+        readMe(myText: retryArray[randomPick])
     }
 }
 
