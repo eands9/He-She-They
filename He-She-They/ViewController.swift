@@ -9,6 +9,7 @@
 import UIKit
 import Speech
 
+
 class ViewController: UIViewController {
   
     @IBOutlet weak var pronounSeg: UISegmentedControl!
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
     var answerCorrect = 0
 
     let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome","Give me a high five, You are so smart"]
-    let retryArray = ["Try again","Oooops","Don't worry nobody's perfect."]
+    let retryArray = ["Try again","Ooops","Don't worry nobody's perfect."]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class ViewController: UIViewController {
         pronounCorrect = questions.list[questionIndex].answerCorrect
         questions.list.remove(at: questionIndex)
         pronounSeg.selectedSegmentIndex = 4
+        pronounSeg.setEnabled(true, forSegmentAt: 4)
     }
     @IBAction func pronounSegBtn(_ sender: Any) {
         let pronounIndex = pronounSeg.selectedSegmentIndex
@@ -62,6 +64,12 @@ class ViewController: UIViewController {
             checkAnswer()
         case 3:
             sentenceLbl.text = answerCorrectSentence
+            pronounSeg.setEnabled(true, forSegmentAt: 0)
+            pronounSeg.setEnabled(true, forSegmentAt: 1)
+            pronounSeg.setEnabled(true, forSegmentAt: 2)
+            
+ 
+            
         case 4:
             if lastQIndex == 0{
                 let alert = UIAlertController(title: "Mission Completed!", message: "You've finished everysingle question, do you want to start over again?", preferredStyle: .alert)
@@ -85,18 +93,18 @@ class ViewController: UIViewController {
             answerCorrect += 1
             numberOfAttempts += 1
             progressLbl.text  = "\(answerCorrect) / \(numberOfAttempts)"
+            pronounSeg.setEnabled(true, forSegmentAt: 4)
             
         }
         else {
             randomTryAgain()
             numberOfAttempts += 1
             progressLbl.text = "\(answerCorrect) / \(numberOfAttempts)"
-            
         }
     }
     func readMe( myText: String) {
         let utterance = AVSpeechUtterance(string: myText )
-        utterance.voice = AVSpeechSynthesisVoice(language: "ru-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: "EN-US")
         utterance.rate = 0.5
         
         let synthesizer = AVSpeechSynthesizer()
