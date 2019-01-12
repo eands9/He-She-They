@@ -64,9 +64,9 @@ class ViewController: UIViewController {
             checkAnswer()
         case 3:
             sentenceLbl.text = answerCorrectSentence
-            pronounSeg.setEnabled(true, forSegmentAt: 0)
-            pronounSeg.setEnabled(true, forSegmentAt: 1)
-            pronounSeg.setEnabled(true, forSegmentAt: 2)
+            pronounSeg.setEnabled(false, forSegmentAt: 0)
+            pronounSeg.setEnabled(false, forSegmentAt: 1)
+            pronounSeg.setEnabled(false, forSegmentAt: 2)
             
  
             
@@ -81,6 +81,9 @@ class ViewController: UIViewController {
             }
             else{
                 askQuestion()
+                pronounSeg.setEnabled(true, forSegmentAt: 0)
+                pronounSeg.setEnabled(true, forSegmentAt: 1)
+                pronounSeg.setEnabled(true, forSegmentAt: 2)
             }
             default:
             sentenceLbl.text = "Nothing"
