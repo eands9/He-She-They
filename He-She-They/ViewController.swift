@@ -27,8 +27,8 @@ class ViewController: UIViewController {
     var numberOfAttempts = 0
     var answerCorrect = 0
 
-    let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome","Give me a high five, You are so smart"]
-    let retryArray = ["Try again","Ooops","Don't worry nobody's perfect."]
+    let congratulateArray = ["Great Job", "Excellent", "Way to go", "Alright", "Right on", "Correct", "Well done", "Awesome","Give me a high five You are so smart"]
+    let retryArray = ["Try again","Oooops","Don't worry nobody's perfect."]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
     }
     func readMe( myText: String) {
         let utterance = AVSpeechUtterance(string: myText )
-        utterance.voice = AVSpeechSynthesisVoice(language: "EN-US")
+        utterance.voice = AVSpeechSynthesisVoice(language: "en-US")
         utterance.rate = 0.5
         
         let synthesizer = AVSpeechSynthesizer()
