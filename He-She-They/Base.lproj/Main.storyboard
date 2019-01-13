@@ -32,7 +32,7 @@
                                     <action selector="pronounSegBtn:" destination="BYZ-38-t0r" eventType="valueChanged" id="y3N-Tf-utE"/>
                                 </connections>
                             </segmentedControl>
-                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fo4-ym-daH">
+                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fo4-ym-daH">
                                 <rect key="frame" x="69" y="61" width="252" height="224"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
